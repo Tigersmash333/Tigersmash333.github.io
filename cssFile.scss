@@ -1,0 +1,66 @@
+$blue: rgb(33, 150, 243);
+
+body {  
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+}
+
+#button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  height: 80px;
+  outline: none;
+  padding: 0px;
+  width: 100px;
+  
+  &.toggled {
+    #icon {
+      background-color: transparent;
+      
+      &:before {
+        top: 0px;
+        transform: rotate(-45deg);
+      }
+      
+      &:after {
+        bottom: 0px;
+        transform: rotate(45deg);
+      }
+    }
+  }
+  
+  #icon {
+    background-color: $blue;
+    border-radius: 100px;
+    height: 10px;
+    position: relative;
+    transition: all 0.25s;
+    width: 100px;
+    
+    &:before,
+    &:after {
+      background-color: $blue;
+      border-radius: 100px;
+      content: "";
+      height: 10px;
+      left: 0px;
+      position: absolute;
+      transition: all 0.25s;
+      width: 100px;
+    }
+    
+    &:before {
+      top: -30px;
+    }
+    
+    &:after {
+      bottom: -30px;      
+    }
+  }
+}
